@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Charmonman&family=Roboto+Condensed:wght@300&display=swap');
+body {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Charmonman", cursive;
+}
+
+h2 {
+    color: #3046c5;
+}
+
+header h2 {
+    color: #cec8ff;
+}
+
+footer {
+    background-image:linear-gradient(#cec8ff, white);
+    padding: 20px 0;
+}
+
+.jumbotron {
+    padding: 30px;
+    background-image: linear-gradient(to right, #5637dd, #3046c5, #60106b);
+    color:white;
+}
+
+.row-content{
+    padding: 50px 0;
+    min-height:200px;
+}
+.row-content-border {
+    border-bottom: 1px ridge lightgray;
+}
