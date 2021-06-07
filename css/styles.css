@@ -24,6 +24,7 @@ footer {
     padding: 30px;
     background-image: linear-gradient(to right, #5637dd, #3046c5, #60106b);
     color:white;
+    margin:0;
 }
 
 .row-content{
@@ -32,4 +33,7 @@ footer {
 }
 .row-content-border {
     border-bottom: 1px ridge lightgray;
+}
+.navbar {
+    background-color: #901CAD;
 }
