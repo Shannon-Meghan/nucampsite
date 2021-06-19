@@ -12,18 +12,18 @@ h2 {
 }
 
 header h2 {
-    color: #cec8ff;
+    color: #000;
 }
 
 .site-footer {
-    background-image:linear-gradient(#cec8ff, white);
+    background-image: linear-gradient(to right, #A6D7F5, #A0D5F5, #90AEF5);
     padding: 20px 0;
 }
 
 .jumbotron {
     padding: 30px;
-    background-image: linear-gradient(to right, #5637dd, #3046c5, #60106b);
-    color:white;
+    background-image: linear-gradient(to right, #A6D7F5, #A0D5F5, #90AEF5);
+    color:#000;
     margin:0;
 }
 
@@ -36,6 +36,7 @@ header h2 {
 }
 .navbar {
     background-color: #901CAD;
+    border-top:#901CAD 1px solid;
 }
 .tab-content {
     border:1px solid #DDD;
@@ -47,4 +48,20 @@ header h2 {
 }
 .carousel {
     border: solid #5637dd;
+}
+.logo-bg{
+    background-color:white;
+    opacity:.6;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}
+.logo-nb {
+    padding: 0 0 5px 5px;
+}
+.breadcrumb {
+    background:none;
+}
+.card-body {
+    border-top: #901CAD 1px solid;
 }
