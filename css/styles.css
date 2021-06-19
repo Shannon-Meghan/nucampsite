@@ -65,3 +65,6 @@ header h2 {
 .card-body {
     border-top: #901CAD 1px solid;
 }
+.footer-links a {
+    color:rgba(0, 0, 0, 0.5);
+}
