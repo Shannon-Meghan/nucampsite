@@ -25,16 +25,69 @@
                     <img src="/img/logo.png" class="img-fluid" />
                 </div>
                 <div class="col">
-                    <h1>NuCamp Version 2</h1>
+                    <h1>NuCamp</h1>
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="col-sm col-md-4 col-xl-2 mt-4">
-                    <a href="#reserveForm" class="btn-lg btn-info text-nowrap" data-toggle="tooltip" data-placement="bottom" data-html="true" trigger="hover" 
-                    title="Or call us at 1-206-555-1234">Reserve Campsite</a>
+                    <a class="btn-lg btn-info text-nowrap" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row form-group">
+                                <label class="col-sm col-form-label" for="numCampers">Number of Campers</label>
+                                <div class="col-sm">
+                                    <select id="numCampers" name="numCampers" class="form-control">
+                                        <option>Select...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm col-form-label" for="date">Date</label>
+                                <div class="col-sm">
+                                    <input type="date" id="date" name="date" placeholder="MM/DD/YYYY" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="" class="col-sm-6 col-form-label">Campsite Type</label>
+                                <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked> Tent
+                                    </label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="siteType" id="siteRV" autocomplete="off" checked> RV
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col">
+                                    <button type="submit" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
@@ -135,6 +188,14 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carouselPause">
+                            <i class="fa fa-pause"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carouselPlay">
+                            <i class="fa fa-play"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,42 +243,6 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content">
-            <div class="col col-sm-6 mx-auto">
-                <div class="card">
-                    <h3 class="card-title bg-info p-3">Reserve a Campsite</h3>
-                    <div class="card-body">
-                        <form id="reserveForm">
-                            <div class="row form-group">
-                                <label class="col-sm col-form-label" for="numCampers">Number of Campers</label>
-                                <div class="col-sm">
-                                    <select id="numCampers" name="numCampers" class="form-control">
-                                        <option>Select...</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-sm col-form-label" for="date">Date</label>
-                                <div class="col-sm">
-                                    <input type="date" id="date" name="date" placeholder="MM/DD/YYYY" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row form-group....">
-                                <div class="col">
-                                    <button type="submit" class="btn-lg btn-outline-primary">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <footer class="site-footer">
@@ -253,9 +278,15 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script>
-        $(function(){
-            $('[data-toggle="tooltip"]').tooltip[]
-        })
+            $(function(){
+                $(".carousel").carousel( {interval:2000, pause:"false" } );
+                $("#carouselPause").click(function(){
+                    $(".carousel").carousel("pause");
+                });
+                $("#carouselPlay").click(function(){
+                    $(".carousel").carousel("cycle");
+                });
+            });
     </script>
 </body>
 
